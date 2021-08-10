@@ -1,26 +1,55 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container">
+    <h1>Rick and Morty</h1>
+    <FilterByStatus />
+    <FilterByName />
+    <ListCharacters />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ListCharacters from './components/ListCharacters.vue'
+import FilterByStatus from "./components/FilterByStatus.vue"
+import FilterByName from "./components/FilterByName.vue"
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ListCharacters,
+    FilterByStatus,
+    FilterByName
   }
 }
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --background-body: #24282F;
+  --background-card: #3C3E44;
+  --text-white: #FFFFFF;
+  --text-gray: #c0c0c0;
+  --text-orange: #FF9800;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: var(--background-body);
+  color: var(--text-white);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h1 {
+  margin-bottom: 3rem;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+.container {
+  width: 980px;
+  max-width: 90%;
+  margin: 5rem auto;
+}
+img {
+  width: 100%;
 }
 </style>
